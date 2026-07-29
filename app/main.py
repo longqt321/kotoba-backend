@@ -27,6 +27,8 @@ app = FastAPI(
 app.add_middleware(
     SessionMiddleware,
     secret_key=settings.SECRET_KEY,
+    https_only=True,
+    same_site="none"
 )
 app.add_middleware(
     CORSMiddleware,
